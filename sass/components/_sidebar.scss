@@ -1,4 +1,77 @@
 .sidebar {
     background-color: var(--color-grey-dark-1);
     flex: 0 0 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .side-nav {
+        font-size:  1.4rem;
+        list-style: none;
+        margin-top: 3.5rem;
+
+        &__item {
+            position: relative;
+            padding-left: 1rem;
+
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+
+        &__item::before {
+            content: "";
+            top: 0;
+            left: 0;
+            position: absolute;
+            height: 100%;
+            width: 3px;
+            background-color: var(--color-primary);
+            transition: transform .2s,
+                        width .2s cubic-bezier(.69,.12,.95,.93) .2s,
+                        background-color .1s;
+            transform: scaleY(0);
+
+        }
+
+        &__item:hover::before,
+        &__item--active::before {
+            transform: scaleY(1);
+            width: 100%;
+        }
+
+        &__item:active::before {
+            background-color: var(--color-primary-light);
+        }
+
+
+
+
+        &__link:link,
+        &__link:visited {            
+            display: flex;
+            align-items: center;
+            color: var(--color-grey-light-1);
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 100;
+        }
+
+        &__icon {
+            height: 2rem;
+            width: 2rem; 
+            margin-right: 2rem;
+            fill: currentColor;
+        }
+    }
+
+
+    .legal {
+        font-size: 1.3rem;
+        color: var(--color-grey-light-4);
+        padding: 2.5rem;
+    }
 }
+
