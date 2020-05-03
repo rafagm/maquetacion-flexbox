@@ -1,4 +1,98 @@
 .hotel-view {
-    background-color: orangered;
     flex: 1;
+
+    .gallery {
+        display: flex;
+
+        &__item {
+
+
+
+        }
+
+        &__photo {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    .overview {
+        display: flex;
+        align-items: center;
+        border-bottom: var(--line);
+
+        &__heading {
+            font-size: 2.2rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 1.5rem 3rem;
+        }
+
+        &__stars {
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        &__icon-star,
+        &__icon-location {
+            height: 2rem;
+            width: 2rem;
+            fill: var(--color-primary);
+        }
+
+        &__icon-location {
+            margin-right: .7rem;
+        }
+
+        &__location {
+            display: flex;
+            margin-right: 3rem;
+            font-size: 1.3rem;
+        }
+
+        &__rating {
+            display: flex;
+            flex-direction: column;
+            align-self: stretch;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2rem;
+
+            background-color: var(--color-primary);
+            color: white ;
+            &-average {
+                font-size: 2.25rem;
+                font-weight: 300;
+            }
+            &-count {
+                font-size: .8rem;
+                text-transform: uppercase;
+            }
+        }
+
+
+    }
+}
+
+.btn-inline {
+    border: none;
+    color: var(--color-primary);
+    font-size: inherit;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    display: inline-block;
+    background-color: transparent;
+    transition: all .2s;
+    
+    &:hover {
+        color: var(--color-grey-dark-1);
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulse 1s infinite;
+
+    }
 }
