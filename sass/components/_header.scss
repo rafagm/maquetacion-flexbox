@@ -67,6 +67,7 @@
     }
 
     &__icon {
+        display: flex;
         height: 2rem;
         width: 2rem;
         fill: var(--color-grey-dark-3);
