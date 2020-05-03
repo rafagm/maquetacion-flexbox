@@ -24,3 +24,8 @@ body {
     background-repeat: no-repeat;
     color: var(--color-grey-dark-2);
 }
+
+::selection {
+    color: white;
+    background-color: var(--color-primary);
+}

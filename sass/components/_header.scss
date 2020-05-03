@@ -44,10 +44,6 @@
         }
     }
 
-    &__input:focus + &__button {
-        background-color: var(--color-grey-light-3);
-    }
-
     &__button {
         position: relative;
         right: 3.5rem;
@@ -55,7 +51,8 @@
         width: auto;
         border: none;
         background-color: var(--color-grey-light-2);
-        transition: transform .1s;
+        transition: transform .1s,
+                    background-color .3s;
 
         &:focus {
             outline: none;
@@ -64,6 +61,11 @@
         &:active {
             transform: translateY(2px);
         }
+    }
+    
+
+    &__input:focus ~ &__button {
+        background-color: var(--color-grey-light-3);
     }
 
     &__icon {

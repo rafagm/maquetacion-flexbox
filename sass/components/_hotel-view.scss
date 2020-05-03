@@ -80,10 +80,10 @@
         display: flex;
         padding: 4rem;
         background-color: var(--color-grey-light-1);
-        border-bottom: var(--line);
+        border-bottom: var(--line);         
+        font-size: 1.4rem;
 
         &__description {
-            font-size: 1.4rem;
             flex: 0 0 60%;
             margin-right: 4rem;
             box-shadow: var(--shadow-dark-small);
@@ -162,8 +162,84 @@
         }
 
         &__user-reviews {
-            background-color: yellowgreen;
-            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .review {           
+                position: relative;     
+                background-color: white;
+                box-shadow: var(--shadow-dark-small);
+                padding: 3rem;                    
+                margin-bottom: 3.5rem;
+
+                &__text {
+                    position: relative;
+                    z-index: 1;
+
+                }
+
+                &__user {
+                    margin-top: 2rem;
+                    display: flex;
+                    align-items: center;
+                    
+                    font-size: 1.2rem;
+                }
+
+                &__photo {
+                    height: 5rem;
+                    width: 5rem;
+                    border-radius: 500px;
+                    margin-right: 1.5rem;
+
+                }
+
+                &__user-box {
+
+                }
+
+                &__user-name {
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    margin-bottom: .2rem;
+
+                }
+
+                &__user-date {
+
+                }
+
+                &__rating {
+                    margin-left: auto;
+                    color: var(--color-primary);
+                    font-size: 2.5rem;                    
+                    padding: .2rem .7rem;
+                    transition: all .3s;
+                    border-radius: 3px;
+
+                    &:hover {
+                        background-color: var(--color-primary);
+                        color: white
+                    }
+                }
+                
+                &::before {
+                    content: "\201C";
+                    position: absolute;
+                    font-size: 20rem;
+                    color: var(--color-grey-light-2);
+                    line-height: 1;
+                    font-family: sans-serif;
+                    top: -2.5rem;
+                    left: -.9rem;
+                    overflow: hidden;
+                
+                }
+    
+   
+            }
+
         }
 
 
@@ -176,17 +252,62 @@
     font-size: inherit;
     border-bottom: 1px solid currentColor;
     padding-bottom: 2px;
+    padding: .5rem .7rem;
+    border-radius: 3px;
     display: inline-block;
     background-color: transparent;
     transition: all .2s;
+    width: fit-content;
+    position: relative;
+    z-index: 100;
+
+    & span {
+        margin-left: .5rem;
+        transition: margin-left .2s;
+    }
+    
     
     &:hover {
-        color: var(--color-grey-dark-1);
+        color: white;
+
+
+        span {
+            margin-left: 1rem;
+        }
+
+        &::before {
+            height: 100%;            
+            transform: scaleX(1);
+            transition: transform .2s,
+                        height .2s cubic-bezier(.69,.12,.95,.93) .2s,
+                        background-color .1s;
+        }
     }
 
     &:focus {
         outline: none;
         animation: pulse 1s infinite;
+        background-color: var(--color-primary);
+        color: white;
 
+    }
+
+
+    &::before {
+        content: "";
+        position: absolute;
+        background-color: var(--color-primary);
+        top: 0;
+        left: 0;
+        height: 1px;
+        transform: scaleX(0);
+        width: 100%;
+        z-index: -1;
+        transform-origin: bottom;
+        transition: transform .2s .2s,
+                    height .2s cubic-bezier(.69,.12,.95,.93) ,
+                    background-color .1s;
+        border-radius: 3px;
+        
     }
 }
