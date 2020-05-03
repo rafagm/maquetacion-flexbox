@@ -280,7 +280,8 @@
             transform: scaleX(1);
             transition: transform .2s,
                         height .2s cubic-bezier(.69,.12,.95,.93) .2s,
-                        background-color .1s;
+                        background-color .1s;            
+            transform-origin: center center;
         }
     }
 
@@ -303,7 +304,6 @@
         transform: scaleX(0);
         width: 100%;
         z-index: -1;
-        transform-origin: bottom;
         transition: transform .2s .2s,
                     height .2s cubic-bezier(.69,.12,.95,.93) ,
                     background-color .1s;
