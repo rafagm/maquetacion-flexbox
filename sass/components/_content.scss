@@ -1,4 +1,9 @@
 .content {
     display: flex;
     flex: 1;
+
+    
+    @include respond($mq-tablet-portrait) {
+        flex-direction: column;
+    }
 }

@@ -7,4 +7,11 @@
     flex-direction: column;
     //test
     min-height: 500px;
+
+    @include respond($mq-tablet-landscape) {
+        margin: 0 auto;
+        max-width: 100%;
+        width: 100%;
+    }
+
 }

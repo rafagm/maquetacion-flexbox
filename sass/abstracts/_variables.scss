@@ -20,4 +20,13 @@
     --shadow-dark-small: 0 2rem 6rem rgba(0, 0, 0, .1);
 
     --line: 1px solid var(--color-grey-light-3);
+
 }
+
+
+
+    //* ------------- MEDIA QUERY ------------- */
+    $mq-phone: phone;
+    $mq-tablet-portrait: table-portrait;
+    $mq-tablet-landscape: table-landscape;
+    $mq-big-desktop: big-desktop;

@@ -1,0 +1,30 @@
+// MEDIA QUERY MANAGER
+// ORDER: Base + Typography > general layout > grid page layout > components
+
+@mixin respond-phone {
+    @media only screen and (max-width: 37.5em) { @content }; //600px
+}
+
+@mixin respond-tablet-portrait {
+    @media only screen and (max-width: 56.25em) { @content }; //900px
+}
+
+@mixin respond-tablet-landscape {
+    @media only screen and (max-width: 75em) { @content }; //1200px
+}
+
+@mixin respond-big-desktop {
+    @media only screen and (min-width: 112.5em) { @content }; //1800px
+}
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == $mq-phone {
+        @include respond-phone { @content };
+    } @else if $breakpoint == $mq-tablet-portrait {
+        @include respond-tablet-portrait { @content };
+    } @else if $breakpoint == $mq-tablet-landscape {
+        @include respond-tablet-landscape { @content };
+    } @else if $breakpoint == $mq-big-desktop {
+        @include respond-big-desktop { @content };
+    }
+}
